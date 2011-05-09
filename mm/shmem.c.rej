@@ -1,0 +1,9 @@
+--- mm/shmem.c	2010-11-22 14:01:26.000000000 -0500
++++ mm/shmem.c	2011-04-28 11:21:24.000000000 -0400
+@@ -2756,5 +2756,6 @@
+ 		fput(vma->vm_file);
+ 	vma->vm_file = file;
+ 	vma->vm_ops = &shmem_vm_ops;
++	vma->vm_flags |= VM_CAN_NONLINEAR;
+ 	return 0;
+ }

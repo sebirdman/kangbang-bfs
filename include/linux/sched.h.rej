@@ -1,0 +1,11 @@
+--- include/linux/sched.h	2010-11-22 14:01:26.000000000 -0500
++++ include/linux/sched.h	2011-04-28 11:21:24.000000000 -0400
+@@ -1077,7 +1078,7 @@
+ 					 struct task_struct *task);
+ 
+ #ifdef CONFIG_FAIR_GROUP_SCHED
+-	void (*moved_group) (struct task_struct *p, int on_rq);
++	void (*task_move_group) (struct task_struct *p, int on_rq);
+ #endif
+ };
+ 

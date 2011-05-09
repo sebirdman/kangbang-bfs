@@ -1,0 +1,10 @@
+--- drivers/mmc/core/core.c	2010-11-22 14:01:26.000000000 -0500
++++ drivers/mmc/core/core.c	2011-04-28 11:21:24.000000000 -0400
+@@ -1366,6 +1366,7 @@
+ 
+ 	case PM_POST_SUSPEND:
+ 	case PM_POST_HIBERNATION:
++	case PM_POST_RESTORE:
+ 
+ 		spin_lock_irqsave(&host->lock, flags);
+ 		host->rescan_disable = 0;

@@ -1,0 +1,13 @@
+--- arch/x86/xen/enlighten.c	2010-11-22 14:01:26.000000000 -0500
++++ arch/x86/xen/enlighten.c	2011-04-28 11:21:24.000000000 -0400
+@@ -1000,10 +1000,6 @@
+ {
+ 	struct sched_shutdown r = { .reason = reason };
+ 
+-#ifdef CONFIG_SMP
+-	stop_other_cpus();
+-#endif
+-
+ 	if (HYPERVISOR_sched_op(SCHEDOP_shutdown, &r))
+ 		BUG();
+ }
